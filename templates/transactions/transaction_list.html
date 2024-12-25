@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="flex relative overflow-x-auto text-white justify-center">
+{% if transactions %}
+<div class="w-4/5 mx-auto">
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-white">DATE</th>
+            <th class="text-white">TYPE</th>
+            <th class="text-white">AMOUNT</th>
+            <th class="text-white">CATEGORY</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            {% for transaction in transactions  %}
+            <tr>
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.type }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.category }}</td>
+            </tr>
+            {% endfor %}
+
+    </tbody>
+</table>
+</div>
+{% else %}
+    <p>No transactions found.</p>
+{% endif %}
+</div>
+
+{% endblock content %}
