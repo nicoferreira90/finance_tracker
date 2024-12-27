@@ -7,4 +7,4 @@ class TransactionFilter(django_filters.FilterSet):
 
     class Meta:
         model = Transaction
-        fields = ['type']
+        fields = ['type', 'category', 'date', 'amount']
